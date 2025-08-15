@@ -1,0 +1,17 @@
+public/static
+src/assets
+src/assets/style/element-ui.css
+cert
+public
+dist
+node_modules
+/node_modules
+bin
+build
+pnpm-lock.yaml
+.vscode
+robots.txt
+.eslintcache
+.stylelintcache
+bundle-stats.html
+src/utils/mcp-client.esm.js

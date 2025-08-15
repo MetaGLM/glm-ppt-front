@@ -1,0 +1,440 @@
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.svg-icon {
+  /*将icon大小设置和字体大小一致，后续在通过svg-icon 使用icon的时候，可直接设置图标的font-size即可控制图标大小 */
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em; /* 因icon大小被设置为和字体大小一致，而span等标签的下边缘会和字体的基线对齐，故需设置一个往下的偏移比例，来纠正视觉上的未对齐效果 */
+  fill: currentColor; /* 定义元素的颜色，currentColor是一个变量，这个变量的值就表示当前元素的color值，如果当前元素未设置color值，则从父元素继承 */
+  overflow: hidden;
+}
+.svg-external-icon {
+  background-color: currentColor;
+  -webkit-mask-size: cover !important;
+  mask-size: cover !important;
+  display: inline-block;
+}
+
+// 字重 ---- font-weight ----
+.fw_bold {
+  font-weight: bold;
+} //加粗
+.fw400 {
+  font-weight: 400;
+}
+.fw500 {
+  font-weight: 500;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw700 {
+  font-weight: 700;
+}
+
+//部分通用颜色
+.primary-color {
+  color: var(--primaryColor);
+}
+
+.disabled-color {
+  color: var(--colorTextDisabled);
+}
+
+.error-color {
+  color: var(--errorColor);
+}
+
+// 通用字色
+.ft_white {
+  color: #fff;
+}
+.ft_black {
+  color: #000;
+}
+.ft_grey3 {
+  color: #333;
+}
+.ft_grey6 {
+  color: #666;
+}
+.ft_grey9 {
+  color: #999;
+}
+.color-131212,
+.color_text_title {
+  color: var(--mainTextColor);
+}
+.color_text_placeholder {
+  color: var(--colorTextPlaceholder);
+}
+.color-666 {
+  color: #666666;
+}
+.color-999 {
+  color: #999999;
+}
+.color-ff {
+  color: #ffffff;
+}
+.bg_white {
+  color: #ffffff;
+}
+.bg_fafafa {
+  color: #fafafa;
+}
+.bg_black {
+  color: #000000;
+}
+
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.vm {
+  vertical-align: middle;
+}
+.pr,
+.relative {
+  position: relative;
+}
+.pa,
+.absolute {
+  position: absolute;
+}
+.pf {
+  position: fixed;
+}
+.top-0 {
+  top: 0;
+}
+.left-0 {
+  left: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.right-0 {
+  right: 0;
+}
+
+//隐藏代码滚动条
+.scroll-display-none {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll-display-none::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
+// 超出显示点点点
+.dot,
+.dot-1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.dot-2,
+.line-2-dot {
+  display: -webkit-box; //将对象作为弹性伸缩盒子模型显示。
+  -webkit-box-orient: vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 2; //限制行数
+  text-overflow: ellipsis; //用一个省略号代替超出的内容
+  overflow: hidden; //超出部分隐藏
+  white-space: normal;
+}
+.dot-3,
+.line-3-dot {
+  display: -webkit-box; //将对象作为弹性伸缩盒子模型显示。
+  -webkit-box-orient: vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 3; //限制行数
+  text-overflow: ellipsis; //用一个省略号代替超出的内容
+  overflow: hidden; //超出部分隐藏
+  white-space: normal;
+}
+.dot-4,
+.line-4-dot {
+  display: -webkit-box; //将对象作为弹性伸缩盒子模型显示。
+  -webkit-box-orient: vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 4; //限制行数
+  text-overflow: ellipsis; //用一个省略号代替超出的内容
+  overflow: hidden; //超出部分隐藏
+  white-space: normal;
+}
+.dot-5,
+.line-5-dot {
+  display: -webkit-box; //将对象作为弹性伸缩盒子模型显示。
+  -webkit-box-orient: vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 5; //限制行数
+  text-overflow: ellipsis; //用一个省略号代替超出的内容
+  overflow: hidden; //超出部分隐藏
+  white-space: normal;
+}
+
+.borderbox {
+  box-sizing: border-box;
+}
+.pointer {
+  cursor: pointer;
+}
+.overauto {
+  overflow: auto;
+}
+.overscroll {
+  overflow: scroll;
+}
+.overhidden {
+  overflow: hidden;
+}
+.over-x-scroll {
+  overflow-x: scroll;
+}
+.over-y-scroll {
+  overflow-y: scroll;
+}
+.over-x-auto {
+  overflow-x: auto;
+}
+.over-y-auto {
+  overflow-y: auto;
+}
+.over-x-hidden {
+  overflow-x: hidden;
+}
+.over-y-hidden {
+  overflow-y: hidden;
+}
+.b-none {
+  border-style: none;
+}
+.b-l-none {
+  border-left-style: none;
+}
+.b-r-none {
+  border-right-style: none;
+}
+.b-t-none {
+  border-top-style: none;
+}
+.b-b-none {
+  border-bottom-style: none;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+
+body {
+  // 全局调整图片预览组件样式
+  .el-image-viewer__canvas {
+    margin-top: -20px !important;
+    .el-image-viewer__img {
+      max-height: calc(100% - 200px) !important;
+    }
+  }
+  // 强制蒙层最高级
+  .el-loading-mask {
+    z-index: 9999 !important;
+    background-color: #f7f8fa;
+  }
+  // 统一重置下拉框样式
+  .el-select-dropdown__item {
+    text-align: left;
+    font-size: 12px;
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+  }
+  .el-input__inner,
+  .el-textarea__inner {
+    font-size: 14px;
+    border-radius: 6px;
+    border-color: var(--boxBorderColor-1);
+    resize: none;
+    &:hover {
+      border-color: var(--primaryColor);
+    }
+    &:focus {
+      border-color: var(--primaryColor) !important;
+    }
+  }
+
+  .el-select-dropdown__item.hover,
+  .el-select-dropdown__item:hover {
+    background-color: #f5f5f5;
+  }
+  .el-select-dropdown__item.selected {
+    background-color: var(--primaryColor);
+    color: #fff;
+    div,
+    p,
+    span {
+      color: inherit;
+    }
+  }
+  .el-icon-loading:before {
+    font-size: inherit;
+  }
+
+  .el-tooltip__popper.is-dark {
+    border: 1px solid var(--tooltip-dark-bg);
+    background: var(--tooltip-dark-bg);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.16);
+    &[x-placement^='right'],
+    &[x-placement^='left'] {
+      .popper__arrow {
+        border-right-color: var(--tooltip-dark-bg);
+        border-left-color: var(--tooltip-dark-bg);
+        &::after {
+          border-right-color: var(--tooltip-dark-bg);
+          border-left-color: var(--tooltip-dark-bg);
+        }
+      }
+    }
+    &[x-placement^='top'],
+    &[x-placement^='bottom'] {
+      .popper__arrow {
+        border-top-color: var(--tooltip-dark-bg);
+        border-bottom-color: var(--tooltip-dark-bg);
+        &::after {
+          border-top-color: var(--tooltip-dark-bg);
+          border-bottom-color: var(--tooltip-dark-bg);
+        }
+      }
+    }
+  }
+
+  .el-tooltip__popper.is-light {
+    border: 1px solid var(--tooltip-light-bg);
+    &[x-placement^='right'],
+    &[x-placement^='left'] {
+      .popper__arrow {
+        border-right-color: var(--tooltip-light-bg);
+        border-left-color: var(--tooltip-light-bg);
+        &::after {
+          border-right-color: var(--tooltip-light-bg);
+          border-left-color: var(--tooltip-light-bg);
+        }
+      }
+    }
+    &[x-placement^='top'],
+    &[x-placement^='bottom'] {
+      .popper__arrow {
+        border-top-color: var(--tooltip-light-bg);
+        border-bottom-color: var(--tooltip-light-bg);
+        &::after {
+          border-top-color: var(--tooltip-light-bg);
+          border-bottom-color: var(--tooltip-light-bg);
+        }
+      }
+    }
+  }
+  .el-tooltip__popper {
+    max-width: 600px;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  // 拖拽上传容器背景
+  .drap-bg {
+    display: none;
+  }
+  .drag-active {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px dashed var(--primaryColor) !important;
+    .drap-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 104vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 9999;
+      color: #5e5e66;
+      font-size: 14px;
+      text-align: center;
+      background: #f6f9ff url('~@/assets/images/svg/drag_logo.svg') no-repeat center;
+    }
+  }
+}
+
+.drag-none {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+// 用于设置状态的通用样式
+.common-status-style {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  .set-color(@color) {
+    color: @color;
+    background: fade(@color, 8%);
+  }
+  .set-color(#134cff);
+  &.text {
+    padding: 0;
+    color: var(--mainTextColor);
+    background: transparent;
+    border-radius: 0;
+  }
+  &.normal {
+    .set-color(#134cff);
+  }
+  &.success {
+    .set-color(#06bf7f);
+  }
+  &.error {
+    .set-color(#f01d24);
+  }
+  &.cancel {
+    .set-color(#5e5e66);
+  }
+  &.warning {
+    .set-color(#fac123);
+  }
+  &.warning-1 {
+    .set-color(#ff8e42);
+  }
+}
+
+// 全局code样式，目的是统一prism和highlight
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: inherit;
+  text-shadow: none;
+  font-size: 14px;
+}

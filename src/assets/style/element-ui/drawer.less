@@ -1,0 +1,129 @@
+.custom-class-drawer-style {
+  .el-drawer {
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background: #f6f8fa;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+    text-align: left;
+    &__header {
+      padding: 18px 24px;
+      margin-bottom: 0;
+      color: var(--mainTextColor);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+    &__close-btn {
+      box-sizing: border-box;
+      display: flex;
+      padding: 2px;
+      color: #000000;
+      font-size: 16px;
+      line-height: 1;
+      border-radius: 6px;
+      &:hover {
+        background: rgba(19, 18, 18, 0.05);
+      }
+      &:active {
+        background: rgba(19, 18, 18, 0.08);
+      }
+    }
+    &__body {
+      padding: 24px 24px 8px;
+    }
+    &__footer {
+      padding: 16px 24px;
+      .el-button {
+        font-weight: 400;
+        padding: 8px 15px;
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 6px;
+        text-align: center;
+      }
+      .close-btn {
+        color: var(--mainTextColor);
+        background: #ececf1;
+        border-color: #ececf1;
+        &:hover {
+          background: #e8e9eb;
+          border-color: #e8e9eb;
+        }
+        &:focus {
+          background: #d1d3d6;
+          border-color: #d1d3d6;
+        }
+      }
+      .ok-btn {
+        color: #fff;
+        background: var(--primaryColor);
+        border-color: var(--primaryColor);
+        &:hover {
+          background: #1554ff;
+          border-color: #1554ff;
+        }
+        &:focus {
+          background: #2359b6;
+          border-color: #2359b6;
+        }
+        &.is-disabled {
+          background: #cedcf5;
+          border-color: #cedcf5;
+        }
+        .el-icon-loading {
+          &:before {
+            font-size: 16px;
+          }
+        }
+      }
+      .loading-btns {
+        display: flex;
+        justify-content: flex-end;
+        .el-button.is-loading {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .delete-btn {
+        color: #ffffff;
+        background: #f01d24;
+        border-color: #f01d24;
+      }
+      .cancel-btn {
+        background: #fff;
+        border-color: #e0e0e099;
+        color: var(--mainTextColor);
+        &:hover {
+          background: rgba(19, 18, 18, 0.05);
+        }
+        &:focus {
+          background: rgba(19, 18, 18, 0.08);
+        }
+        &.is-disabled {
+          background: #f7f8fa;
+        }
+      }
+    }
+  }
+
+  &.has-footer {
+    .el-drawer__body {
+      padding-bottom: 8px;
+    }
+    .el-drawer__footer {
+      padding: 8px 24px 16px;
+    }
+  }
+  &.divider {
+    .el-drawer__footer {
+      border-top: 1px solid #ebeff5;
+    }
+  }
+  &.drawer-width-550 {
+    .el-drawer {
+      width: 550px;
+    }
+  }
+}

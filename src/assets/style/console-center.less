@@ -1,0 +1,270 @@
+.console-center-page {
+  .el-button {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .el-input,
+  .el-textarea {
+    .el-input__inner,
+    .el-textarea__inner {
+      color: var(--mainTextColor);
+      font-size: 14px;
+      border-color: var(--boxBorderColor-1);
+      text-align: left;
+      &:hover {
+        border-color: #c0c4cc;
+      }
+      &:focus {
+        border-color: var(--primaryColor);
+      }
+    }
+    &.search-input {
+      .el-input__prefix {
+        color: #5e5e66;
+        left: 8px;
+      }
+    }
+  }
+}
+
+.console-center-el-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  i {
+    font-size: 16px;
+  }
+  & + .el-button {
+    margin-left: 0px;
+  }
+  [class*='el-icon-'] + span {
+    margin-left: 0px;
+  }
+  span {
+    font-weight: 400;
+  }
+  &.el-button--text {
+    color: #5e5e66;
+    &:hover {
+      color: var(--primaryColor);
+    }
+    &__style1 {
+      color: #5e5e66;
+      padding: 2px 4px;
+      &:hover {
+        color: #131212;
+        background: rgba(19, 18, 18, 0.05);
+      }
+      &:focus {
+        background: rgba(19, 18, 18, 0.08);
+      }
+    }
+  }
+  &.el-button--primary {
+    color: #ffffff;
+    border-color: var(--primaryColor);
+    background-color: var(--primaryColor);
+    &:hover {
+      border-color: #1554ff;
+      background-color: #1554ff;
+    }
+    &:active {
+      border-color: #2359b6;
+      background-color: #2359b6;
+    }
+    &.is-disabled {
+      border-color: #cedcf5;
+      background-color: #cedcf5;
+    }
+    &-1 {
+      padding: 8px 16px;
+    }
+  }
+  &.el-button--default {
+    color: #131212;
+    border: 1px solid var(--boxBorderColor-1);
+    background-color: #fff;
+    &:hover {
+      background-color: rgba(19, 18, 18, 0.05);
+    }
+    &:active,
+    &:focus {
+      background-color: rgba(19, 18, 18, 0.08);
+    }
+    &.is-disabled {
+      border-color: var(--boxBorderColor-1);
+      background-color: #f7f8fa;
+    }
+    &-1 {
+      padding: 8px 16px;
+    }
+  }
+  &.is-plain {
+    padding: 8px 16px;
+    &:hover {
+      background-color: transparent;
+    }
+    &:active,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.console-center-btn-link-area {
+  border-top: 1px solid var(--boxBorderColor-1);
+  padding: 10px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  a {
+    color: #5e5e66;
+    font-size: 12px;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 6px;
+    line-height: 20px;
+    &:hover {
+      background-color: rgba(19, 18, 18, 0.05);
+    }
+    &:focus {
+      background-color: rgba(19, 18, 18, 0.08);
+    }
+    &.disabled {
+      background: transparent;
+      color: #b0b1b8;
+    }
+    i {
+      margin-right: 4px;
+      font-size: 12px;
+    }
+  }
+}
+
+.console-center-a-link {
+  color: var(--mainTextColor);
+  font-size: 14px;
+  white-space: nowrap;
+  display: inline-flex;
+  gap: 32px;
+  a {
+    padding: 2px 1px 2px 4px;
+    border-radius: 4px;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    &:hover {
+      background-color: rgba(19, 18, 18, 0.05);
+    }
+    &:active {
+      background-color: rgba(19, 18, 18, 0.08);
+    }
+    i {
+      transition: 0.2s;
+      margin-left: 5px;
+    }
+    &:hover {
+      i {
+        transform: translateX(-5px);
+      }
+    }
+  }
+}
+
+.console-center-el-icon-close {
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 4px;
+  padding: 2px;
+  &:hover {
+    background-color: rgba(19, 18, 18, 0.05);
+  }
+  &:active {
+    background-color: rgba(19, 18, 18, 0.08);
+  }
+}
+
+.console-center-btns-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  .el-button {
+    .console-center-el-button;
+  }
+}
+
+// 用于实例部署中实例数量form-item的样式
+.console-center-ins-nums-form-item {
+  .nums-input {
+    display: flex;
+    align-items: flex-end;
+    line-height: initial;
+    gap: 8px;
+    .el-input-number {
+      width: 96px;
+      i {
+        font-weight: 700;
+      }
+      &__decrease {
+        border-radius: 0 0 8px 0;
+        background: #f7f8fa;
+        border-left: 1px solid #ffffff;
+      }
+      &__increase {
+        border-radius: 0 8px 0 0;
+        background: #f7f8fa;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
+      }
+      .el-input {
+        &__inner {
+          text-align: left;
+          padding-left: 8px;
+          padding-right: 40px;
+          border-radius: 8px;
+        }
+      }
+    }
+    .estimate {
+      color: #131212;
+      font-size: 12px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .qps {
+      color: var(--colorTextPlaceholder);
+    }
+  }
+}
+// 用于模型卡片hot标识
+.console-center-hot-tooltip-class {
+  .hot-description {
+    span {
+      background: linear-gradient(90deg, #ff9c47 9.31%, #e22b3d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+.console-center-select-model-popover {
+  .el-select-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+    }
+  }
+}

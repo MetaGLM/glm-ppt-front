@@ -1,0 +1,120 @@
+// 基础radio-group样式
+.base-radio-group {
+  .el-radio__input {
+    &.is-checked + .el-radio__label {
+      color: var(--mainTextColor);
+      padding-left: 8px;
+      font-weight: 400;
+    }
+    &.is-checked {
+      .el-radio__inner::after {
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+    }
+    .el-radio__inner {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .el-radio__label {
+    padding-left: 8px;
+  }
+}
+
+// 文档中的radio-group样式
+.doc-radio-group {
+  overflow-x: scroll;
+  width: 100%;
+  white-space: nowrap;
+  .el-radio-button {
+    &__inner {
+      font-weight: 400;
+      background: var(--radioBgColor);
+      padding: 12px 12px;
+      border-color: var(--radioBorderColor) !important;
+      box-shadow: -1px 0 0 0 var(--radioBorderColor) !important;
+      &:hover {
+        color: var(--mainTextColor);
+      }
+    }
+    &__orig-radio:checked + .el-radio-button__inner {
+      color: #606266;
+    }
+    &.is-active {
+      .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+        color: var(--mainTextColor);
+        background: #ffffff;
+      }
+    }
+  }
+}
+
+.el-radio {
+  .el-radio__original {
+    display: none;
+  }
+  &:focus {
+    .el-radio__inner {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.custom-radio-group-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 12px;
+  max-width: 100%;
+  .el-radio {
+    overflow: hidden;
+    flex: 1;
+    margin: 0 !important;
+    padding: 13px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(224, 224, 224, 0.6);
+    background: #fff;
+    .el-radio__label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 100%;
+      padding: 0;
+      color: var(--mainTextColor);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      .label-logo {
+        line-height: 1;
+        flex: none;
+      }
+      .label-text {
+        flex: 1;
+        overflow: hidden;
+        text-align: left;
+      }
+      .label-desc {
+        overflow: hidden;
+        max-width: 100%;
+        margin: 2px 0 0;
+        color: #8d8e99;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+    .el-radio__input {
+      display: none;
+    }
+    &:hover {
+      border-color: rgba(224, 224, 224, 0.6);
+      background: #fafafa;
+    }
+    &.is-checked {
+      border-color: #134cff;
+      background: rgba(19, 76, 255, 0.08);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.switch-24 {
+  &.el-switch {
+    height: 14px;
+    .el-switch__core {
+      width: 24px !important;
+      height: 14px;
+      border-radius: 8px;
+      &::after {
+        width: 10px;
+        height: 10px;
+        border-radius: 6px;
+      }
+    }
+    &.is-checked .el-switch__core::after {
+      margin-left: -11px;
+    }
+  }
+}

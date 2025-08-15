@@ -1,0 +1,29 @@
+/* style for html inside of browsers */
+.katex {
+  font-size: 1em !important;
+} /* align KaTeX font-size to surrounding text */
+
+eq {
+  max-width: 100%;
+  display: inline-block;
+  overflow-x: auto;
+  vertical-align: top;
+}
+eqn {
+  display: block;
+  overflow-x: auto;
+}
+section.eqno {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+}
+section.eqno > eqn {
+  width: 100%;
+  margin-left: 3em;
+}
+section.eqno > span {
+  width: 3em;
+  text-align: right;
+}

@@ -1,0 +1,795 @@
+// 自定义table样式1
+// tableBgColor 背景色
+// tableBorderColor 边框色
+.custom-class-table-style {
+  border: 1px solid var(--tableBorderColor);
+  border-radius: 6px;
+  &::before {
+    height: 0;
+  }
+  thead {
+    th {
+      border-bottom: 1px solid var(--tableBorderColor) !important;
+    }
+  }
+  th.el-table__cell {
+    background: var(--tableBgColor);
+    font-size: 12px;
+    color: #616161;
+    border: none;
+  }
+  td.el-table__cell {
+    border-bottom: none;
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #000000;
+      font-size: 14px;
+    }
+    .func-btn {
+      color: #000000;
+    }
+  }
+  tr {
+    background-color: var(--tableBgColor);
+    &:hover > td.el-table__cell {
+      background-color: #ffffff !important;
+      .func-btn {
+        color: var(--primaryColor);
+      }
+      .delete-btn {
+        color: #f01d24;
+      }
+    }
+    &.hover-row {
+      & > td.el-table__cell {
+        background-color: #ffffff !important;
+      }
+    }
+  }
+  .el-table__empty-block {
+    background-color: var(--tableBgColor) !important;
+  }
+  .table-my-hover-row {
+    background: #ffffff !important;
+  }
+  .el-loading-mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .el-loading-spinner {
+      position: static;
+      margin-top: 0px;
+    }
+  }
+  &.doc-table {
+    thead {
+      th.el-table__cell {
+        color: #5e5e66;
+        font-size: 14px;
+        border-right: 1px solid var(--tableBorderColor) !important;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border-bottom: 1px solid var(--tableBorderColor);
+          .cell {
+            color: #5e5e66;
+            font-size: 14px;
+            div {
+              color: inherit;
+              font-size: inherit;
+            }
+          }
+        }
+        &:last-child {
+          td {
+            border-bottom: none !important;
+          }
+        }
+      }
+    }
+    &.el-table--border {
+      border-right: none;
+      thead {
+        th {
+          &:last-child {
+            border-right: none !important;
+          }
+        }
+      }
+    }
+    .el-table__body-wrapper {
+      .el-table__body {
+        tr {
+          td {
+            background: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .el-table__row {
+    &.no-expand-row {
+      .el-table__expand-column.el-table__cell {
+        border-right: none;
+        .cell {
+          display: none;
+        }
+      }
+      & + tr {
+        height: 0;
+        .el-table__expanded-cell {
+          display: none;
+        }
+      }
+      &.el-table__row--level-2 {
+        .el-table__cell {
+          .cell {
+            .el-table__indent {
+              padding-left: 15px !important;
+            }
+          }
+        }
+      }
+      &.el-table__row--level-3 {
+        .el-table__cell {
+          .cell {
+            .el-table__indent {
+              padding-left: 29px !important;
+            }
+          }
+        }
+      }
+      &.el-table__row--level-4 {
+        .el-table__cell {
+          .cell {
+            .el-table__indent {
+              padding-left: 42px !important;
+            }
+          }
+        }
+      }
+    }
+    &.expand-row {
+      .el-table__expand-column.el-table__cell {
+        .cell {
+          padding: 0 0 0 16px;
+        }
+      }
+      & + tr {
+        .el-table__expanded-cell {
+          background: #fafafa;
+          padding: 20px;
+        }
+      }
+      &.el-table__row--level-1 {
+        .el-table__cell {
+          .cell {
+            .el-table__indent {
+              padding-left: 12px !important;
+            }
+          }
+        }
+      }
+      &.el-table__row--level-2 {
+        .el-table__cell {
+          .cell {
+            .el-table__indent {
+              padding-left: 24px !important;
+            }
+          }
+        }
+      }
+      &.el-table__row--level-3 {
+        .el-table__cell {
+          .cell {
+            .el-table__indent {
+              padding-left: 37px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------------新版table样式--------------------
+
+// 针对没有固定列的设置样式：class="custom-table-style-class table-not-fixed"
+// 针对有固定列的设置样式：class="custom-table-style-class table-has-fixed"
+// 针对表格首列设置：class-name="first-column-class"【required】
+// 针对表格首列 checkbox 设置：width='40' class-name="first-column-class selection-column-class"【required】
+// 针对表格尾列设置：class-name="last-column-class "【required】
+// 针对首列带有图片有文本和描述且无fixed定位el-table设置：class="custom-table-style-class table-not-fixed table-has-icon"
+// 针对首列带有图片有文本和描述且有fixed定位el-table设置：class="custom-table-style-class table-has-fixed table-has-icon"
+// 针对首列带有图片有文本和描述设置：main-content、title、desc，例如：<div class="main-content"><AutoTooltip class="title" :content="xx"/><AutoTooltip class="desc" :content="xx" /></div>
+// 针对非首列带有图片有文本和描述设置：class-name="icon-desc-column-class"【required】 main-content、title、desc，例如：<div class="main-content"><AutoTooltip class="title" :content="xx"/><AutoTooltip class="desc" :content="xx" /></div>
+// el-table中设置：:row-class-name="params => commonRowClassName(params)(tableData)" // tableData 为注入的表格数据
+// 针对有树形数据的上述设置后同时设置：@expand-change="commonExpandChange"
+// 树形结构的样式只设置了3层，若有更多层手动在样式中添加
+// el-table中设置slot="header"有<i />小图标的话设置：class-name="slot-header-column-class"
+// 有操作列的话设置：class-name="operate-column-class"，里面的button的话一般设置<el-button type="text">或<router-link>，如果是纯icon的话通过<el-button type="text" class="el-button--text-i" icon="iconfont icon-xxx common-i pointer" @click.stop="xx"/>来进行设置
+// 操作列具体可参考：src/views/ModelCenter/components/FineTuningTable.vue中的设置
+// 某一列中有icon的话设置：class-name="has-icon-column-class"
+// table中有状态的设置：class-name="status-column-class"，同时给<template slot-scope="scope"><xx></xx></template>中第一个子元素添加类名，包含：.success、.error、.cancel、.warning，默认是主题色
+
+.row-hover-style() {
+  transition: background-color 0s ease;
+  td.el-table__cell {
+    background-color: var(--tableBgColor);
+    border-color: transparent;
+    &.first-column-class {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    &.last-column-class {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+  + .el-table__row {
+    .el-table__cell {
+      border-top-color: transparent;
+    }
+  }
+  &.first-row-class {
+    .el-table__cell {
+      border-color: transparent;
+    }
+  }
+  &.last-row-class {
+    .el-table__cell {
+      border-color: transparent;
+    }
+  }
+}
+
+//某一列带图标或图片，标题、描述构成单元格内容样式
+.icon-column-style() {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  img,
+  svg {
+    flex: none;
+    width: 36px;
+    height: 36px;
+  }
+  .main-content {
+    overflow: hidden;
+    .title {
+      color: var(--mainTextColor);
+      font-weight: 600;
+      line-height: 20px;
+    }
+    .desc {
+      color: var(--colorTextPlaceholder);
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.selection-column-class() {
+  &.selection-column-class {
+    > .cell {
+      padding-right: 0;
+      .el-checkbox__input {
+        font-size: 0;
+      }
+      .el-checkbox__inner {
+        width: 16px;
+        height: 16px;
+        &:after {
+          top: 2px;
+          left: 5px;
+        }
+      }
+    }
+    & + .el-table__cell {
+      .cell {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.custom-table-style-class {
+  &.el-table {
+    width: 100%;
+    border-radius: 8px;
+    &::before {
+      height: 0;
+      background-color: transparent;
+    }
+    .el-table__fixed,
+    .el-table__fixed-right {
+      &::before {
+        height: 0;
+        background-color: transparent;
+      }
+    }
+    .el-table__header {
+      th {
+        &.el-table__cell {
+          // border-color: var(--boxBorderColor);
+          border: none;
+          padding: 12.5px 0;
+          > .cell {
+            padding-left: 16px;
+            padding-right: 16px;
+            color: var(--colorTextPlaceholder);
+            i {
+              color: var(--colorTextPlaceholder);
+            }
+          }
+        }
+        &.slot-header-column-class {
+          .cell {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+        }
+        .selection-column-class();
+      }
+    }
+    .el-table__body {
+      .el-table__row {
+        font-size: 14px;
+        color: var(--mainTextColor);
+        .el-table__cell {
+          transition: background-color 0s ease;
+          border-color: #ffffff;
+          border-top: 1px solid var(--boxBorderColor-2);
+          .cell {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+          &.first-column-class {
+            .cell {
+              .icon-column-style();
+            }
+          }
+          .selection-column-class();
+          // 处理表格中的图标和图片，描述内容
+          &.icon-desc-column-class {
+            .cell {
+              .icon-column-style();
+            }
+          }
+          &.operate-column-class {
+            .cell {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              a,
+              .el-button--text {
+                margin: 0;
+                padding: 0;
+                color: var(--primaryColor);
+                font-size: 14px;
+                font-weight: 400;
+                padding: 0px 4px;
+                border-radius: 4px;
+                line-height: unset;
+                background: transparent;
+                &:hover {
+                  background: rgba(19, 76, 255, 0.08);
+                }
+                &:active {
+                  background: rgba(19, 76, 255, 0.12);
+                }
+                i {
+                  &:hover {
+                    background: none;
+                  }
+                  &:active {
+                    background: none;
+                  }
+                }
+                &.disabled,
+                &.is-disabled {
+                  opacity: 0.6;
+                  background: none;
+                }
+              }
+              .el-button--text-i {
+                padding: 0;
+                border: none;
+                &.is-disabled {
+                  i {
+                    color: var(--colorTextDisabled);
+                    &:hover {
+                      background: none;
+                    }
+                  }
+                }
+              }
+              a {
+                padding: 1px 4px;
+              }
+              .el-dropdown {
+                .el-dropdown-link {
+                  padding: 1px 4px;
+                  border-radius: 6px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  i {
+                    color: var(--primaryColor);
+                  }
+                  &:hover {
+                    background: rgba(19, 76, 255, 0.08);
+                  }
+                  &:active {
+                    background: rgba(19, 76, 255, 0.12);
+                  }
+                }
+                [disabled] {
+                  background: none;
+                  &:hover {
+                    background: transparent;
+                  }
+                  i {
+                    color: var(--colorTextDisabled);
+                    background: none;
+                  }
+                }
+                &__active {
+                  opacity: 1;
+                }
+              }
+              .more-func-btn {
+                opacity: 0;
+                &__active {
+                  opacity: 1;
+                }
+                .el-dropdown {
+                  &__active {
+                    .el-dropdown-link {
+                      background: rgba(19, 76, 255, 0.08);
+                      &:active {
+                        background: rgba(19, 76, 255, 0.12);
+                      }
+                    }
+                  }
+                }
+              }
+              i {
+                color: var(--primaryColor);
+              }
+              &__hide {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                opacity: 0;
+              }
+              &__show {
+                opacity: 1;
+              }
+            }
+          }
+          &.has-icon-column-class {
+            .cell {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+              i {
+                opacity: 0;
+              }
+              &:hover {
+                i {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+          &.status-column-class {
+            .cell {
+              > :first-child {
+                .common-status-style;
+              }
+            }
+          }
+        }
+        &.first-row-class {
+          .el-table__cell {
+            border-top: 1px solid var(--boxBorderColor);
+          }
+        }
+        &.last-row-class {
+          .el-table__cell {
+            border-bottom: 1px solid var(--boxBorderColor-2);
+          }
+        }
+      }
+      .el-table__row,
+      .el-table__row--level-0,
+      .el-table__row--level-1,
+      .el-table__row--level-2,
+      .el-table__row--level-3 {
+        &:hover {
+          .row-hover-style();
+        }
+      }
+      .el-table__row--level-0 {
+        &:hover {
+          ~ .last-row-class {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-0.expend-row {
+        &:hover {
+          ~ .last-row-class {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+      .el-table__row--level-1 {
+        &:hover {
+          ~ .el-table__row--level-1 {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-1.expend-row {
+        &:hover {
+          ~ .el-table__row--level-1 {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+      .el-table__row--level-2 {
+        &:hover {
+          ~ .el-table__row--level-2 {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-2.expend-row {
+        &:hover {
+          ~ .el-table__row--level-2 {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+      .el-table__row--level-3 {
+        &:hover {
+          ~ .el-table__row--level-3 {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-3.expend-row {
+        &:hover {
+          ~ .el-table__row--level-3 {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+    }
+
+    .el-table__empty-block {
+      background-color: #ffffff;
+      border-top: 1px solid var(--boxBorderColor);
+      border-bottom: 1px solid var(--boxBorderColor-2);
+      .el-table__empty-text {
+        color: var(--colorTextPlaceholder);
+      }
+    }
+    .el-loading-mask {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .el-loading-spinner {
+        position: static;
+        margin-top: 0px;
+        .el-loading-text {
+          color: #8d8e99;
+        }
+        .circular {
+          width: 32px;
+          height: 32px;
+        }
+        .path {
+          stroke: #8d8e99;
+        }
+      }
+    }
+    .common-i {
+      color: #8d8e99;
+      width: 24px;
+      height: 24px;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover {
+        background: rgba(19, 76, 255, 0.08);
+      }
+      &:active {
+        background: rgba(19, 76, 255, 0.12);
+      }
+      &.disabled {
+        cursor: not-allowed;
+        color: var(--colorTextDisabled);
+        background: none;
+      }
+      &__1 {
+        &:hover {
+          background: rgba(19, 18, 18, 0.05);
+        }
+        &:active {
+          background: rgba(19, 18, 18, 0.08);
+        }
+      }
+    }
+  }
+  &.table-has-icon {
+    .el-table__body {
+      .el-table__cell {
+        padding: 16px 0;
+      }
+    }
+  }
+
+  &.table-has-fixed {
+    // .el-table__row--level-0,
+    // .el-table__row--level-1,
+    // .el-table__row--level-2,
+    // .el-table__row--level-3
+    .el-table__body {
+      .el-table__row.hover-row {
+        position: relative;
+        td.el-table__cell {
+          position: relative;
+        }
+        .row-hover-style();
+      }
+      .el-table__row--level-0 {
+        &.hover-row {
+          ~ .last-row-class {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-0.expend-row {
+        &.hover-row {
+          ~ .last-row-class {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+      .el-table__row--level-1 {
+        &.hover-row {
+          ~ .el-table__row--level-1 {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-1.expend-row {
+        &.hover-row {
+          ~ .el-table__row--level-1 {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+      .el-table__row--level-2 {
+        &.hover-row {
+          ~ .el-table__row--level-2 {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-2.expend-row {
+        &.hover-row {
+          ~ .el-table__row--level-2 {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+      .el-table__row--level-3 {
+        &.hover-row {
+          ~ .el-table__row--level-3 {
+            .el-table__cell {
+              border-top-color: transparent;
+            }
+          }
+        }
+      }
+      .el-table__row--level-3.expend-row {
+        &.hover-row {
+          ~ .el-table__row--level-3 {
+            .el-table__cell {
+              border-top-color: var(--boxBorderColor-2);
+            }
+          }
+        }
+      }
+    }
+    .is-scrolling-left {
+      ~ .el-table__fixed,
+      ~ .el-table__fixed-right {
+        .el-table__body {
+          .el-table__row {
+            .el-table__cell {
+              &.last-column-class {
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .is-scrolling-right {
+      ~ .el-table__fixed,
+      ~ .el-table__fixed-right {
+        .el-table__body {
+          .el-table__row {
+            .el-table__cell {
+              &.first-column-class {
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .is-scrolling-middle {
+      ~ .el-table__fixed,
+      ~ .el-table__fixed-right {
+        .el-table__body {
+          .el-table__row {
+            .el-table__cell {
+              &.first-column-class {
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.table-has-pointer {
+    .el-table__body {
+      .el-table__cell {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+// 自定义样式覆盖的confirm类型MessageBox
+.confirm-msg-box {
+  width: 380px;
+  padding-bottom: 0;
+  border-radius: 8px;
+  background: #f6f8fa;
+  .el-message-box__title {
+    color: var(--mainTextColor);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  .el-message-box__header {
+    padding: 20px 24px;
+    padding-bottom: 0;
+  }
+  .el-message-box__content {
+    padding: 32px 24px;
+  }
+  .el-message-box__btns {
+    border-top: 1px solid #ebeff5;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: flex-end;
+    .el-button.is-loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .el-button {
+      border: none;
+      font-weight: 400;
+    }
+    .el-button--small {
+      padding: 10px 12px;
+    }
+    .el-button--default {
+      background-color: #ececf1;
+      color: var(--mainTextColor);
+      &:hover {
+        background-color: #f4f4f9;
+      }
+    }
+    .el-button--primary {
+      color: #fff;
+      background-color: var(--primaryColor);
+      &:hover {
+        background-color: #3e81f5;
+      }
+      .el-icon-loading {
+        &:before {
+          font-size: 16px;
+        }
+      }
+    }
+    .delete-btn {
+      background: #f1343a;
+      &:hover {
+        background-color: #f1343abf;
+      }
+    }
+  }
+  .el-message-box__status {
+    &.el-icon-warning {
+      color: #fcc838;
+      font-size: 20px !important;
+      top: 11.5px;
+    }
+    & + .el-message-box__message {
+      padding-left: 28px;
+    }
+  }
+  .el-message-box__message {
+    color: var(--mainTextColor);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .el-message-box__headerbtn {
+    padding: 2px;
+    line-height: 1;
+    color: #000000;
+    border-radius: 6px;
+    &:hover {
+      background: rgba(19, 18, 18, 0.05);
+    }
+    &:active {
+      background: rgba(19, 18, 18, 0.08);
+    }
+    .el-message-box__close {
+      color: #000000;
+      font-size: 20px;
+    }
+  }
+  &__style1 {
+    .el-message-box__content {
+      .el-message-box__message {
+        color: #5e5e66;
+      }
+    }
+    .el-message-box__btns {
+      border-top: none;
+      .el-button {
+        border-radius: 8px;
+      }
+      .el-button--default {
+        border-color: #ececf1;
+        &:hover {
+          background: #e8e9eb;
+          border-color: #e8e9eb;
+        }
+        &:active {
+          background: #d1d3d6;
+          border-color: #d1d3d6;
+        }
+      }
+      .el-button--primary {
+        border-color: var(--primaryColor);
+        &:hover {
+          background: #1554ff;
+          border-color: #1554ff;
+        }
+        &:active {
+          background: #2359b6;
+          border-color: #2359b6;
+        }
+        &.is-disabled {
+          background: #cedcf5;
+          border-color: #cedcf5;
+        }
+        &.delete-btn {
+          &:hover {
+            background-color: #f1343abf;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .confirm-msg-box {
+    width: 300px;
+    .el-message-box__title {
+      text-align: center;
+    }
+    .el-message-box__header {
+      padding: 24px;
+      padding-bottom: 0;
+    }
+    .el-message-box__content {
+      padding: 20px 24px;
+    }
+    .el-message-box__btns {
+      border-top: none;
+      padding-top: 0;
+      display: flex;
+      justify-content: center;
+      .el-button--small {
+        padding: 12px 0;
+        font-size: 16px;
+        flex: 1;
+        border-radius: 6px;
+      }
+    }
+    .el-message-box__headerbtn {
+      display: none;
+    }
+  }
+}

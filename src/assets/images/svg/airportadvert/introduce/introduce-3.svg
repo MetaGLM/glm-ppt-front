@@ -1,0 +1,34 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_56_2235)">
+<path d="M2.7832 33.1277V30.1634L29.4621 3.01642L33.0505 6.29278L6.05952 33.1277H2.7832Z" fill="#84DCFF"/>
+<path d="M30.4787 8.85148L27.0332 5.55409L29.4624 3.01642L33.0508 6.29278L30.4787 8.85148Z" fill="#3DBDF0"/>
+<path d="M33.1896 30.2344L30.0083 33.2056L2.86133 6.52677L6.13769 2.93838L33.1896 30.2344Z" fill="#84DCFF"/>
+<path d="M8.36024 5.20558L7.43604 6.06891L6.78418 5.37422L7.66132 4.56148L8.36024 5.20558Z" fill="#3DBDF0"/>
+<path d="M11.7206 8.3904L10.7964 9.25372L10.1445 8.55904L11.0217 7.7463L11.7206 8.3904Z" fill="#3DBDF0"/>
+<path d="M27.6395 24.6173L26.7153 25.4806L26.0635 24.7859L26.9406 23.9732L27.6395 24.6173Z" fill="#3DBDF0"/>
+<path d="M31.3261 28.3314L30.4019 29.1948L29.75 28.5001L30.6271 27.6873L31.3261 28.3314Z" fill="#3DBDF0"/>
+<circle cx="18.0005" cy="18.4423" r="11.8901" fill="#134CFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.0015 18.5501C19.8432 18.5501 21.3362 17.0571 21.3362 15.2155C21.3362 13.3738 19.8432 11.8808 18.0015 11.8808C16.1598 11.8808 14.6668 13.3738 14.6668 15.2155C14.6668 17.0571 16.1598 18.5501 18.0015 18.5501ZM23.6356 24.8923V24.8924H12.3663V24.929L12.3662 24.8923C12.3662 21.7804 14.8889 19.2576 18.0009 19.2576C21.1128 19.2576 23.6356 21.7804 23.6356 24.8923Z" fill="white"/>
+<rect width="36" height="36" rx="4" fill="#1877FF"/>
+<mask id="mask0_56_2235" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36">
+<rect width="36" height="36" rx="4" fill="white"/>
+</mask>
+<g mask="url(#mask0_56_2235)">
+<rect width="18" height="18" fill="#134CFF"/>
+<rect x="18" y="18" width="18" height="18" fill="#134CFF"/>
+<path d="M20.0107 38.3036V20.6295H37.6848" stroke="#1877FF" stroke-width="6"/>
+<path d="M19.8633 20.4174L38.805 39.3591" stroke="#1877FF" stroke-width="6"/>
+<path d="M21 -2V15H38" stroke="white" stroke-width="6"/>
+<path d="M21 15L38.7578 -2.75783" stroke="white" stroke-width="6"/>
+<path d="M15 -2V16H-2" stroke="#1877FF" stroke-width="6"/>
+<path d="M15.8701 16.3791L-3.07157 -2.56259" stroke="#1877FF" stroke-width="6"/>
+<path d="M15 38V21H-2" stroke="#84DCFF" stroke-width="6"/>
+<path d="M15.8701 20.4174L-3.07157 39.3591" stroke="#84DCFF" stroke-width="6"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_56_2235">
+<rect width="36" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,58 @@
+::v-deep .markdown-body {
+  margin-top: -2px;
+  line-height: 24px;
+  color: var(--mainTextColor);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  pre {
+    word-break: break-word;
+    white-space: break-spaces;
+  }
+  p {
+    margin: 16px 0;
+    word-break: break-word;
+    white-space: pre-wrap;
+    & > span {
+      background: rgba(140, 227, 253, 0.3);
+    }
+  }
+  hr {
+    height: 1px;
+    margin: 20px 0;
+  }
+}
+::v-deep pre.hljs {
+  width: 100%;
+  padding: 20px;
+  background: #35373f;
+  border-radius: 8px;
+  margin: 12px 0;
+  code {
+    color: #fff;
+    padding: 0;
+    white-space: pre-wrap;
+  }
+  &-attr {
+    color: #e9c188;
+  }
+  &-string {
+    color: #53a4ee;
+  }
+  table {
+    tr {
+      background-color: transparent;
+      border-top: none;
+    }
+    td {
+      padding: 0;
+      border: none;
+      &.hljs-ln-numbers {
+        color: #6e6e7f;
+      }
+    }
+  }
+}
+::v-deep .cursor {
+  margin-top: 1px;
+}

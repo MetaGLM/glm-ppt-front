@@ -1,0 +1,280 @@
+// 采用css 变量，区别于less、scss
+:root {
+  --scrollbar-width: 0px; //滚动条宽度，根据页面动态设置，计算时减去滚动条宽度
+  --divisor: 2;
+  --responsive-container-width: 1146px; //响应容器宽度
+  --responsive-container-margin: 0px; //响应容器 两边留白宽度
+  //响应容器 两边留白宽度大小
+  //仅当--responsive-container-width 设置为 100% 时，var(--responsive-container-margin-size) === var(--responsive-container-margin)
+  --responsive-container-margin-size: calc(
+    calc(100vw - var(--responsive-container-width)) / var(--divisor)
+  );
+  //内容容器宽度值 = 100vw - 2 * var(--responsive-container-margin-size)
+  --responsive-container-width-size: var(--responsive-container-width);
+  //1440px
+  --fs-70: 70px;
+  --lh-86: 86px;
+  --lh-82: 82px;
+
+  --fs-52: 52px;
+  --lh-64: 64px;
+
+  --fs-48: 48px;
+  --fs-40: 40px;
+  --fs-44: 44px;
+  --lh-56: 56px;
+
+  --fs-36: 36px;
+  --lh-48: 48px;
+
+  --fs-32: 32px;
+  --lh-48: 48px;
+
+  --fs-28: 28px;
+  --lh-36: 36px;
+
+  --fs-24: 24px;
+  --lh-32: 32px;
+
+  --fs-22: 22px;
+
+  --fs-20: 20px;
+  --lh-28: 28px;
+
+  --fs-18: 18px;
+  --lh-26: 26px;
+
+  --fs-16: 16px;
+  --lh-24: 24px;
+
+  --fs-14: 14px;
+  --lh-22: 22px;
+}
+
+@media screen and (min-width: 1920px) {
+  :root {
+    --responsive-container-width: 1462px; //响应容器宽度
+    --responsive-container-margin: 0px; //响应容器 两边留白宽度--样式设置变量值
+    //响应容器 两边留白宽度大小
+    //仅当--responsive-container-width 设置为 100% 时，var(--responsive-container-margin-size) === var(--responsive-container-margin)
+    --responsive-container-margin-size: calc(
+      calc(100vw - var(--responsive-container-width) - var(--scrollbar-width)) / var(--divisor)
+    );
+    //内容容器宽度值 = 100vw - 2 * var(--responsive-container-margin-size)
+    --responsive-container-width-size: var(--responsive-container-width);
+    --fs-70: 78px;
+    --lh-86: 92px;
+    --lh-82: 82px;
+
+    --fs-52: 56px;
+    --lh-64: 64px;
+
+    --fs-48: 48px;
+    --fs-40: 40px;
+    --fs-44: 44px;
+    --fs-24: 24px;
+    --lh-56: 56px;
+
+    --fs-36: 36px;
+    --lh-48: 48px;
+
+    --fs-32: 36px;
+    --lh-48: 48px;
+
+    --fs-28: 36px;
+    --lh-36: 48px;
+  }
+}
+
+// ====start==========   容器尺寸变化 media ==============
+@media screen and (min-width: 1756px) and (max-width: 1919px) {
+  :root {
+    --lh-82: 82px;
+    --responsive-container-width: 1462px; //响应容器宽度
+    --responsive-container-margin: 0px; //响应容器 两边留白宽度
+    --responsive-container-width-size: var(--responsive-container-width);
+    --responsive-container-margin-size: calc(
+      calc(100vw - var(--responsive-container-width) - var(--scrollbar-width)) / var(--divisor)
+    );
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1755px) {
+  :root {
+    --responsive-container-width: 100%; //响应容器宽度
+    --responsive-container-margin: 147px; //响应容器 两边留白宽度
+    --responsive-container-width-size: calc(
+      100vw - var(--responsive-container-margin) - var(--responsive-container-margin) -
+        var(--scrollbar-width)
+    );
+    --responsive-container-margin-size: var(--responsive-container-margin);
+  }
+}
+
+@media screen and (min-width: 1274px) and (max-width: 1439px) {
+  :root {
+    --responsive-container-width: 1146px; //响应容器宽度
+    --responsive-container-margin: 0px; //响应容器 两边留白宽度
+    --responsive-container-width-size: var(--responsive-container-width);
+    --responsive-container-margin-size: calc(
+      calc(100vw - var(--responsive-container-width) - var(--scrollbar-width)) / var(--divisor)
+    );
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1273px) {
+  :root {
+    --fs-44: 44px;
+    --fs-24: 20px;
+    --responsive-container-width: 100%; //响应容器宽度
+    --responsive-container-margin: 64px; //响应容器 两边留白宽度
+    --responsive-container-width-size: calc(
+      100vw - var(--responsive-container-margin) - var(--responsive-container-margin) -
+        var(--scrollbar-width)
+    );
+    --responsive-container-margin-size: var(--responsive-container-margin);
+  }
+}
+
+@media screen and (min-width: 976px) and (max-width: 1023px) {
+  :root {
+    --fs-44: 32px;
+    --fs-24: 20px;
+    --lh-82: 56px;
+    --responsive-container-width: 896px; //响应容器宽度
+    --responsive-container-margin: 0px; //响应容器 两边留白宽度
+    --responsive-container-width-size: var(--responsive-container-width);
+    --responsive-container-margin-size: calc(
+      calc(100vw - var(--responsive-container-width) - var(--scrollbar-width)) / var(--divisor)
+    );
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 975px) {
+  :root {
+    --responsive-container-width: 100%; //响应容器宽度
+    --responsive-container-margin: 40px; //响应容器 两边留白宽度
+    --responsive-container-width-size: calc(
+      100vw - var(--responsive-container-margin) - var(--responsive-container-margin) -
+        var(--scrollbar-width)
+    );
+    --responsive-container-margin-size: var(--responsive-container-margin);
+  }
+}
+
+@media screen and (min-width: 728px) and (max-width: 767px) {
+  :root {
+    --responsive-container-width: 688px; //响应容器宽度
+    --responsive-container-margin: 0px; //响应容器 两边留白宽度
+    --responsive-container-width-size: var(--responsive-container-width);
+    --responsive-container-margin-size: calc(
+      calc(100vw - var(--responsive-container-width) - var(--scrollbar-width)) / var(--divisor)
+    );
+  }
+}
+
+@media screen and (max-width: 727px) {
+  :root {
+    --fs-16: 12px;
+    --responsive-container-width: 100%; //响应容器宽度
+    --responsive-container-margin: 20px; //响应容器 两边留白宽度
+    --responsive-container-width-size: calc(
+      100vw - var(--responsive-container-margin) - var(--responsive-container-margin) -
+        var(--scrollbar-width)
+    );
+    --responsive-container-margin-size: var(--responsive-container-margin);
+  }
+}
+
+// ====end==========   容器尺寸变化 media ==============
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  :root {
+    --fs-70: 52px;
+    --lh-86: 64px;
+    --lh-82: 56px;
+
+    --fs-52: 36px;
+    --lh-64: 44px;
+
+    --fs-48: 36px;
+    --fs-40: 32px;
+    --fs-24: 22px;
+    --fs-44: 30px;
+    --fs-24: 24px;
+    --lh-56: 44px;
+
+    --fs-36: 28px;
+    --lh-48: 36px;
+
+    --fs-28: 24px;
+    --lh-36: 36px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --fs-70: 44px;
+    --lh-86: 56px;
+    --lh-82: 56px;
+
+    --fs-52: 32px;
+    --lh-64: 40px;
+
+    --fs-48: 24px;
+    --fs-40: 26px;
+    --fs-44: 22px;
+    --fs-24: 16px;
+    --lh-56: 32px;
+
+    --fs-36: 28px;
+    --lh-48: 36px;
+
+    --fs-32: 24px;
+    --lh-48: 36px;
+
+    --fs-28: 24px;
+    --lh-36: 36px;
+
+    --fs-20: 16px;
+    --lh-28: 24px;
+
+    --fs-18: 16px;
+    --lh-26: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --fs-70: 40px;
+    --lh-86: 56px;
+
+    --fs-52: 32px;
+    --lh-64: 40px;
+
+    --fs-48: 24px;
+    --fs-40: 24px;
+    --fs-44: 24px;
+    --fs-24: 16px;
+    --lh-56: 32px;
+
+    --fs-36: 24px;
+    --lh-48: 28px;
+
+    --fs-32: 24px;
+    --lh-48: 36px;
+
+    --fs-28: 24px;
+    --lh-36: 36px;
+
+    --fs-22: 16px;
+
+    --fs-20: 16px;
+    --lh-28: 24px;
+
+    --fs-18: 16px;
+    --lh-26: 24px;
+
+    --fs-16: 13px;
+  }
+}

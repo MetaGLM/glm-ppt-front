@@ -1,0 +1,22 @@
+// 公共文本框
+.common-input {
+  width: 100%;
+  .el-input__inner {
+    height: 32px;
+    font-size: 14px;
+    color: var(--mainTextColor);
+    border-radius: 6px;
+    border-color: var(--boxBorderColor-1);
+    &::placeholder {
+      color: var(--colorTextPlaceholder);
+      font-size: 12px;
+    }
+
+    &:hover {
+      border-color: var(--primaryColor);
+    }
+    &:focus {
+      border-color: var(--primaryColor);
+    }
+  }
+}

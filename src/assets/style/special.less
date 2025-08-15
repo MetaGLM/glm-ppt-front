@@ -1,0 +1,109 @@
+// 特殊样式、单独的、不常用的，可以放在这里
+
+// 文本下划线
+.text-underline {
+  --icon-width: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  color: #0746ff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  transition: background-size 0.3s;
+  background-position-x: calc(100% - var(--icon-width));
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
+  &:hover {
+    background-position-x: left;
+    background-size: calc(100% - var(--icon-width)) 100%;
+  }
+}
+
+// -> 跳转第三方样式
+.arrow-link-icon-tertiary {
+  &.text-underline {
+    --icon-width: 24px;
+  }
+  &:after {
+    content: '\e733';
+    font-family: iconfont;
+    font-size: 75%;
+    margin-left: 2px;
+    margin-right: 6px;
+    animation: arrow-link-fix 0.5s ease-in;
+    clip-path: inset(0 0 0 20%);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  &:hover {
+    text-decoration: none;
+    &:after {
+      clip-path: inset(0 0 0 0);
+      margin-left: 8px;
+      margin-right: 0;
+    }
+  }
+}
+
+@keyframes arrow-link-fix {
+  0% {
+    clip-path: inset(0 0 0 18%);
+  }
+  100% {
+    clip-path: inset(0 0 0 20%);
+  }
+}
+
+// 向右箭头，不带线样式
+.arrow-right-icon-tertiary {
+  position: sticky;
+  &:after {
+    content: '\e72c';
+    font-family: iconfont;
+    font-size: 100%;
+    margin-left: 2px;
+    margin-right: 6px;
+    clip-path: inset(0 0 0 20%);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  &:hover {
+    text-decoration: none;
+    &:after {
+      clip-path: inset(0 0 0 0);
+      margin-left: 8px;
+      margin-right: 0;
+    }
+  }
+}
+
+// 通用hover line
+.hover-line-mixin {
+  & {
+    position: relative;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    right: 100%;
+    height: 1px;
+    background: #494949;
+    transition: all 0.2s linear;
+  }
+
+  &:hover {
+    &:after {
+      left: 0;
+      right: 0;
+    }
+  }
+}

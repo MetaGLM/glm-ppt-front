@@ -1,0 +1,100 @@
+.custom-cascader-popper-class {
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px rgba(25, 35, 49, 0.08), 0px 12px 24px rgba(25, 35, 49, 0.12);
+  .el-cascader-panel {
+    .el-cascader-menu {
+      border-color: var(--boxBorderColor-1);
+      &__list {
+        .el-cascader-node {
+          text-align: left;
+          padding: 0 20px;
+          .el-checkbox {
+            margin-right: 8px;
+          }
+          &.is-active {
+            color: #fff;
+            background-color: var(--primaryColor);
+            .el-checkbox {
+              margin-right: 8px;
+              &.is-checked {
+                .el-checkbox__inner {
+                  background-color: #fff;
+                  border-color: #fff;
+                  &::after {
+                    border-color: var(--primaryColor);
+                  }
+                }
+              }
+            }
+            .el-cascader-node__label {
+              color: #fff;
+            }
+          }
+          &.is-disabled {
+            cursor: not-allowed;
+            .el-cascader-node__label {
+              color: #c0c4cc;
+            }
+          }
+          &:not(.is-disabled):not(.is-active):focus,
+          &:not(.is-disabled):not(.is-active):hover {
+            background: #f5f5f5;
+            .el-cascader-node__label {
+              background: transparent;
+            }
+          }
+          &__label {
+            padding: 0 4px;
+            font-size: 12px;
+            height: 32px;
+            line-height: 32px;
+            color: var(--mainTextColor);
+          }
+          &__prefix {
+            display: none;
+            font-weight: 700;
+          }
+          &.in-active-path {
+            .el-icon-arrow-right {
+              color: var(--mainTextColor);
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+  .el-cascader__suggestion-panel {
+    .el-cascader__suggestion-list {
+      .el-cascader__suggestion-item {
+        text-align: left;
+        font-size: 12px;
+        padding: 0 20px;
+        height: 32px;
+        line-height: 32px;
+        color: var(--mainTextColor);
+        &.is-checked {
+          color: #fff;
+          background-color: var(--primaryColor);
+        }
+        .el-icon-check {
+          display: none;
+        }
+        &:not(.is-disabled):not(.is-checked):focus,
+        &:not(.is-disabled):not(.is-checked):hover {
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+}
+
+.custom-cascader-class {
+  .el-cascader__tags {
+    .el-tag {
+      margin: 4px 0 2px 6px;
+    }
+  }
+}

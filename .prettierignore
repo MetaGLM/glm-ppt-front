@@ -1,0 +1,64 @@
+###
+# Place your Prettier ignore content here
+
+###
+# .gitignore content is duplicated here due to https://github.com/prettier/prettier/issues/8506
+
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# TypeScript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+
+# Serverless directories
+.serverless
+
+# IDE / Editor
+.idea
+
+# Service worker
+sw.*
+
+# macOS
+.DS_Store
+
+# Vim swap files
+*.swp
+public/static
+src/assets/images
+src/assets/style/fonts
+src/assets/style/element-ui.css
+
+*.png
+*.eot
+*.ttf
+*.woff
+dist
+node_modules
+public
+package.json
+package-lock.json
+pnpm-lock.yaml
+bundle-stats.html
+src/utils/mcp-client.esm.js

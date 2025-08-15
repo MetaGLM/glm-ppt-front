@@ -1,0 +1,165 @@
+.custom-popper-class {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px rgba(25, 35, 49, 0.08), 0px 12px 24px rgba(25, 35, 49, 0.12);
+  border-radius: 6px;
+  border: none;
+  .el-select-dropdown__item {
+    color: var(--mainTextColor);
+    &:hover {
+      background: #f5f5f5;
+      color: var(--mainTextColor);
+    }
+    &.hover {
+      background-color: #f5f5f5;
+      color: var(--mainTextColor);
+    }
+    &.selected {
+      background-color: var(--primaryColor);
+      color: #fff;
+    }
+    &.is-disabled {
+      color: #c0c4cc;
+      cursor: not-allowed;
+    }
+  }
+  &.el-picker-panel {
+    .el-picker-panel__body-wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      .el-date-range-picker__content {
+        .el-date-range-picker__header div {
+          color: #1d232f;
+        }
+      }
+      .el-picker-panel__sidebar {
+        position: static;
+        width: 100%;
+        display: flex;
+        border: none;
+        background: #ffffff;
+        padding-bottom: 6px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        .el-picker-panel__shortcut {
+          width: auto;
+          color: var(--primaryColor);
+        }
+      }
+      .el-picker-panel__body {
+        border-bottom: 1px solid #e4e4e4;
+        margin-left: 0px;
+        .el-date-table {
+          td.start-date div {
+            margin-left: 5px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+          }
+          td.end-date div {
+            margin-right: 5px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+          }
+          td.end-date span,
+          td.start-date span {
+            color: #ffffff;
+          }
+          td span {
+            color: #1d232f;
+            border-radius: 6px;
+          }
+          td.in-range div {
+            background-color: #eef0f0;
+          }
+          td.disabled div {
+            background-color: #ffffff;
+            span {
+              color: #c0c6cf;
+            }
+          }
+        }
+
+        .el-month-table {
+          td {
+            &.current:not(.disabled) {
+              .cell {
+                color: #134cff;
+              }
+            }
+            .cell {
+              color: #1d232f;
+              width: 72px;
+              border-radius: 6px;
+            }
+          }
+          td.in-range div {
+            background-color: #eef0f0;
+          }
+          td.start-date div {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            .cell {
+              color: #ffffff;
+            }
+          }
+          td.end-date div {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            .cell {
+              color: #ffffff;
+            }
+          }
+          td.disabled div {
+            .cell {
+              color: #c0c6cf;
+              background-color: #fafafa;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .custom-popper-class {
+    &.el-date-range-picker.has-sidebar {
+      width: 100vw;
+    }
+    &.el-picker-panel {
+      .el-picker-panel__body-wrapper {
+        .el-picker-panel__body {
+          width: 100%;
+          min-width: unset;
+          min-width: 100%;
+          margin-left: 0px;
+        }
+      }
+      .el-date-range-picker__content {
+        width: 100% !important;
+      }
+      .el-date-range-picker {
+        width: 80% !important;
+      }
+      .el-picker-panel__sidebar {
+        display: none;
+      }
+      .el-date-range-picker__content {
+        margin: 0px;
+        padding: 5px;
+      }
+      .el-date-range-picker__content.is-left {
+        padding-bottom: 0px;
+      }
+      .el-date-range-picker__content.is-right {
+        padding-top: 0px;
+      }
+      .el-date-table th {
+        padding: 0px;
+        text-align: center;
+      }
+      .el-date-table td {
+        padding: 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <% if (process.env.VUE_APP_ENV !== 'development') { %>
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <% } %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0,viewport-fit=cover" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <!-- bigmodel 新版官网 -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4623769_aeqdg3v48bm.css">
+    <!-- 旧版icon -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3037642_i5it0x40hmi.css">
+    
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- 资源加载动画 -->
+    <style>
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: flex;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        background-color: #fafafa;
+      }
+      .logo-loading {
+        width: 120px;
+      }
+    </style>
+    <!-- bigmodel 新版官网 -->
+    <script src="https://at.alicdn.com/t/c/font_4623769_aeqdg3v48bm.js"></script>
+    <!-- 旧版icon -->
+    <script src="https://at.alicdn.com/t/c/font_3037642_i5it0x40hmi.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+      <div id="loader-wrapper">
+        <img class="logo-loading" src='<%=BASE_URL %>images/loading.gif' alt="智谱AI">
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+  </html>

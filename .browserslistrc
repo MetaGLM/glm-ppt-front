@@ -1,0 +1,8 @@
+> 1%,
+last 3 versions,
+not ie <= 8,
+chrome >= 14,
+safari >= 3,
+Firefox >= 3.5,
+opera >= 11.5
+not dead

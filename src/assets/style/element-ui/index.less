@@ -1,0 +1,163 @@
+@charset "utf-8";
+@import './form.less';
+@import './table.less';
+@import './popper.less';
+@import './dialog.less';
+@import './tooltip.less';
+@import './select.less';
+@import './input.less';
+@import './message-box.less';
+@import './drawer.less';
+@import './dropdown.less';
+@import './radio.less';
+@import './checkbox.less';
+@import './tabs.less';
+@import './slider.less';
+@import './switch.less';
+@import './cascader.less';
+
+// 全局覆盖原element-ui样式
+/******************** message ************************/
+.el-message {
+  border: none;
+  border-radius: 8px !important;
+  min-width: unset;
+  padding: 13px 16px;
+  background-color: #ffffff;
+  // box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  .el-icon {
+    &-success {
+      color: var(--successColor);
+    }
+    &-info {
+      color: var(--infoColor);
+    }
+    &-warning {
+      color: var(--warningColor);
+    }
+    &-error {
+      color: var(--errorColor);
+    }
+  }
+  &__content {
+    color: var(--mainTextColor) !important;
+  }
+  &.is-closable {
+    .el-message__content {
+      padding-right: 26px;
+    }
+    .el-message__closeBtn {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      background-color: transparent;
+      border-radius: 4px;
+      &:hover {
+        background-color: rgba(19, 18, 18, 0.05);
+      }
+      &:active {
+        background-color: rgba(19, 18, 18, 0.08);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .el-message {
+    width: 100%;
+  }
+}
+
+/******************** button ************************/
+.el-button--primary {
+  background-color: var(--primaryColor);
+  border-color: var(--primaryColor);
+  &:focus,
+  &:hover {
+    background-color: #1554ff;
+    border-color: #1554ff;
+  }
+  &:active {
+    background-color: #2359b6;
+    border-color: #2359b6;
+  }
+  &.is-disabled {
+    background-color: #cedcf5;
+    border-color: #cedcf5;
+    &:hover {
+      background-color: #cedcf5;
+      border-color: #cedcf5;
+    }
+  }
+  &.is-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.el-button--danger {
+  background-color: var(--dangerColor);
+  border-color: var(--dangerColor);
+  &:focus,
+  &:hover {
+    background-color: var(--dangerHoverColor);
+    border-color: var(--dangerHoverColor);
+  }
+  &:active {
+    background-color: var(--dangerActiveColor);
+    border-color: var(--dangerActiveColor);
+  }
+  &.is-disabled {
+    background-color: var(--dangerDisabledColor);
+    border-color: var(--dangerDisabledColor);
+    &:hover {
+      background-color: var(--dangerDisabledColor);
+      border-color: var(--dangerDisabledColor);
+    }
+  }
+}
+
+.el-button--default {
+  background-color: #ffffff;
+  border-color: var(--boxBorderColor-1);
+  color: var(--mainTextColor);
+  &:focus,
+  &:hover {
+    color: var(--mainTextColor);
+    border-color: var(--boxBorderColor-1);
+    background-color: rgba(19, 18, 18, 0.05);
+  }
+  &:active {
+    color: var(--mainTextColor);
+    border-color: var(--boxBorderColor-1);
+    background-color: rgba(19, 18, 18, 0.08);
+  }
+  &.is-disabled {
+    color: #b0b1b8;
+    border-color: var(--boxBorderColor-1);
+    background-color: #f7f8fa;
+    &:hover {
+      color: #b0b1b8;
+      border-color: var(--boxBorderColor-1);
+      background-color: #f7f8fa;
+    }
+  }
+  &.is-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/******************** card ************************/
+.el-card.is-always-shadow {
+  box-shadow: 0px 1px 5px 0px rgba(38, 38, 38, 0.1);
+}
+
+.el-scrollbar .el-scrollbar__bar {
+  opacity: 1 !important;
+}

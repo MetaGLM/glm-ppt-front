@@ -1,0 +1,64 @@
+.popper-class-custom-dropdownmenu {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+  border: none;
+  &.el-popper[x-placement^='bottom'] {
+    margin-top: 6px;
+  }
+  .el-dropdown-menu__item {
+    display: flex;
+    align-items: center;
+    padding: 7px 16px;
+    color: var(--mainTextColor);
+    font-size: 12px;
+    line-height: normal;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    .iconfont {
+      color: #5e5e66;
+    }
+    &.delete {
+      color: #f01d24;
+      &:hover {
+        color: #f01d24;
+      }
+    }
+    &:hover {
+      color: var(--mainTextColor);
+      background: #f5f5f5;
+    }
+    & + .el-dropdown-menu__item {
+      margin-top: 4px;
+    }
+  }
+  .popper__arrow {
+    display: none;
+  }
+  &__style1 {
+    .el-dropdown-menu__item {
+      white-space: nowrap;
+      &.delete {
+        color: var(--mainTextColor);
+        &:hover {
+          color: var(--mainTextColor);
+        }
+      }
+    }
+  }
+  &__style2 {
+    .el-dropdown-menu__item {
+      padding: 10px 16px;
+      i {
+        font-size: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+  &__inside-container {
+    left: unset !important;
+    right: 0px;
+    min-width: 100px;
+  }
+}

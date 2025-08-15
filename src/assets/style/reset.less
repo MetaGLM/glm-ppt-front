@@ -1,0 +1,169 @@
+/**
+* Description: PC Base style 
+**/
+/*RESET
+-------------------------------------------------------------- */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+pre,
+code,
+form,
+input,
+button,
+fieldset,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  // min-width: 1200px;
+}
+
+html[lang='en'] {
+}
+
+body {
+  overflow: auto;
+  font-family: var(--fontFamily);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #333;
+  background: var(--pageBgColor);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+del,
+ins {
+  text-decoration: none;
+}
+caption,
+th {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+  color: var(--primaryColor);
+}
+// i { display: block; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+input,
+button,
+textarea,
+select {
+  font-size: 100%;
+}
+button {
+  border: none;
+}
+q:before,
+q:after {
+  content: '';
+}
+addr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+sup,
+sub {
+  vertical-align: baseline;
+}
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+
+// placeholder 颜色
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* WebKit browsers 适配谷歌 */
+  color: var(--colorTextPlaceholder);
+  font-size: var(--fontSizeTextPlaceholder);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ 适配火狐 */
+  color: var(--colorTextPlaceholder);
+  font-size: var(--fontSizeTextPlaceholder);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Internet Explorer 10+  适配ie*/
+  color: var(--colorTextPlaceholder);
+  font-size: var(--fontSizeTextPlaceholder);
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 适配火狐 */
+  color: var(--colorTextPlaceholder);
+  font-size: var(--fontSizeTextPlaceholder);
+}
+// 类型type="number"的右边箭头
+/* 针对WebKit浏览器，如Chrome、Safari */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 针对Firefox浏览器 */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

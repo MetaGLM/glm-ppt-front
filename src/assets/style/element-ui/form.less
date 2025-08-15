@@ -1,0 +1,432 @@
+// form表单-竖向对齐方式样式
+// .label-desc label 标题下 描述部分
+// .agree-check  同意勾选框样式
+// .help-text 帮助信息或描述类文本【content 下面类文字】
+// .el-form-item.mb0  margin-bottom: 0;
+// 其他。。。
+
+.custom-class-form-style {
+  &.el-form--label-top {
+    .el-form-item.is-required:not(.is-no-asterisk)
+      .el-form-item__label-wrap
+      > .el-form-item__label:before,
+    .el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
+      display: none;
+    }
+    .el-form-item.is-required:not(.is-no-asterisk)
+      .el-form-item__label-wrap
+      > .el-form-item__label:after,
+    .el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:after {
+      content: '*';
+      color: #f56c6c;
+      margin-left: 4px;
+    }
+    .el-form-item__label {
+      padding-bottom: 8px;
+    }
+  }
+  &__v1 {
+    &.el-form--label-top {
+      flex: 1;
+      .el-form-item {
+        margin-bottom: 0px;
+      }
+      .custom-popper-class {
+        width: 100%;
+        left: 0 !important;
+      }
+      .el-form-item__label {
+        padding: 0;
+        color: var(--mainTextColor);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 32px;
+        margin-bottom: 8px;
+        .el-form-item__content {
+          .el-radio-group {
+            margin-bottom: 16px;
+            display: block;
+          }
+          .el-input {
+            .el-input__inner {
+              color: var(--mainTextColor);
+              font-size: 14px;
+              border-color: var(--boxBorderColor-1);
+              text-align: left;
+            }
+          }
+        }
+      }
+      .has-explain-form-item {
+        .el-form-item__label {
+          margin-bottom: 0px;
+        }
+        .el-form-item__content {
+          .desc {
+            color: var(--colorTextPlaceholder);
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+      .select-radio-group-form-item {
+        .el-radio-group {
+          margin-bottom: 16px;
+          display: block;
+        }
+      }
+      .first-form-item {
+        .el-form-item__label {
+          margin-top: 0px;
+        }
+      }
+      .el-form-item-slot-label {
+        .el-form-item__label {
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: fit-content;
+        }
+      }
+      .use-radio-card-form-item {
+        .el-form-item__content {
+          .el-radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 152px);
+            grid-auto-flow: row;
+            justify-content: flex-start;
+            gap: 12px;
+            .el-radio-button {
+              cursor: pointer;
+              padding: 4px 20px;
+              border-radius: 6px;
+              border: 1px solid var(--tableBorderColor);
+              background: #fff;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: center;
+              &__inner {
+                border: none;
+                border-radius: 0px;
+                padding: 0px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-weight: 400;
+                transition: none;
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 6px;
+                }
+                svg {
+                  width: 24px;
+                  height: 24px;
+                }
+                .model-name {
+                  flex: 1;
+                  overflow: hidden;
+                  text-align: center;
+                  .name {
+                    color: var(--mainTextColor);
+                    font-size: 14px;
+                    line-height: 22px;
+                  }
+                  .tag {
+                    white-space: pre-wrap;
+                    color: var(--colorTextPlaceholder);
+                    font-size: 12px;
+                    line-height: 20px;
+                  }
+                }
+              }
+              &__orig-radio:checked + .el-radio-button__inner {
+                background: none;
+                box-shadow: none;
+              }
+              &.is-active {
+                border-color: var(--primaryColor);
+                background: rgba(19, 76, 255, 0.08);
+              }
+              &:focus:not(.is-focus):not(:active):not(.is-disabled) {
+                box-shadow: none;
+              }
+              &.is-disabled {
+                cursor: not-allowed;
+              }
+              &.is-disabled:hover {
+                box-shadow: none;
+                border-color: var(--tableBorderColor);
+              }
+              &.is-disabled.is-active:hover {
+                box-shadow: none;
+                border-color: #254bf6;
+              }
+              &:hover {
+                border-color: #254bf6;
+                box-shadow: 0px 6px 8px 0px rgba(28, 31, 35, 0.06);
+              }
+            }
+          }
+          .desc {
+            margin-bottom: 0;
+            margin-top: 8px;
+            color: var(--colorTextPlaceholder);
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+      .slot-header-form-item {
+        .el-form-item__label {
+          &::after {
+            display: none;
+          }
+          .slot-header {
+            label {
+              &::after {
+                content: '*';
+                color: #f56c6c;
+                margin-left: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .el-form-item {
+    margin-bottom: 32px;
+    &:has(.el-form-item) {
+      margin-bottom: 0;
+      > .el-form-item__label {
+        padding-bottom: 0;
+      }
+    }
+    &.mb0 {
+      margin-bottom: 0;
+    }
+    &__label {
+      color: var(--mainTextColor);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+    }
+
+    .el-form-item__content {
+      line-height: 1;
+      .el-select {
+        width: 100%;
+      }
+
+      .el-input__inner,
+      .el-textarea__inner {
+        font-size: 14px;
+        color: var(--mainTextColor);
+        border-color: var(--boxBorderColor-1);
+        resize: none;
+        &:hover {
+          border-color: var(--primaryColor);
+        }
+        &:focus {
+          border-color: var(--primaryColor) !important;
+        }
+      }
+      .el-input__inner {
+        height: 32px;
+        padding: 0 11px;
+        line-height: 22px;
+        .el-range-separator {
+          line-height: 30px;
+        }
+      }
+      .el-textarea__inner {
+        padding: 4px 11px;
+        line-height: 22px;
+      }
+
+      .el-input--prefix {
+        .el-input__inner {
+          padding-left: 30px;
+        }
+        .el-input__prefix {
+          left: 11px;
+        }
+      }
+      .el-input--suffix {
+        .el-input__icon {
+          line-height: 32px;
+          width: auto;
+        }
+        .el-input__inner {
+          padding-right: 30px;
+        }
+      }
+
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        border-color: var(--boxBorderColor-1);
+        &:not(.is-disabled):hover {
+          border-color: #a5acb9 !important;
+          & ~ .el-input .el-input__inner:not(.is-disabled) {
+            border-color: #a5acb9 !important;
+            border-color: var(--primaryColor) !important;
+          }
+        }
+        &:not(.is-disabled):focus {
+          border-color: var(--primaryColor) !important;
+        }
+      }
+
+      .el-input.is-disabled,
+      .el-textarea.is-disabled {
+        .el-input__inner,
+        .el-textarea__inner {
+          color: var(--colorTextDisabled);
+          background: #f7f8fa;
+          border-color: var(--boxBorderColor-1);
+        }
+      }
+
+      .el-radio {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 24px;
+        &__input {
+          font-size: 0;
+        }
+        &__inner {
+          width: 16px;
+          height: 16px;
+          &:after {
+            width: 6px;
+            height: 6px;
+          }
+        }
+
+        &__label {
+          display: inline-flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 8px;
+          color: var(--mainTextColor);
+          font-weight: 400;
+        }
+        &.card {
+          box-sizing: border-box;
+          height: auto;
+          padding: 13px 15px;
+          border-radius: 8px;
+          border-color: rgba(224, 224, 224, 0.6);
+          background: #fff;
+          line-height: 22px;
+          &:hover {
+            border-color: rgba(224, 224, 224, 0.6);
+            background: #fafafa;
+          }
+          &.is-checked {
+            border-color: #134cff;
+            background: rgba(19, 76, 255, 0.08);
+          }
+          .el-radio__input {
+            display: none;
+          }
+          .el-radio__label {
+            flex-direction: row;
+            align-items: center;
+            padding: 0;
+            .label-right {
+              margin-left: 8px;
+              flex: 1;
+            }
+            .label-desc {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      input::-webkit-input-placeholder,
+      textarea::-webkit-input-placeholder {
+        /* WebKit browsers 适配谷歌 */
+        color: var(--colorTextPlaceholder);
+      }
+      input::-moz-placeholder,
+      textarea::-moz-placeholder {
+        /* Mozilla Firefox 19+ 适配火狐 */
+        color: var(--colorTextPlaceholder);
+      }
+      input:-ms-input-placeholder,
+      textarea:-ms-input-placeholder {
+        /* Internet Explorer 10+  适配ie*/
+        color: var(--colorTextPlaceholder);
+      }
+      input:-moz-placeholder,
+      textarea:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 适配火狐 */
+        color: var(--colorTextPlaceholder);
+      }
+      // 帮助信息或描述类文本
+      .help-text {
+        margin-top: 8px;
+        color: #8d8e99;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+    &.is-error {
+      .el-form-item__content {
+        .el-input__inner,
+        .el-textarea__inner,
+        .el-checkbox__inner {
+          border-color: #f01d24;
+        }
+      }
+    }
+    .agree-check {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      .el-checkbox__label {
+        font-size: 12px;
+        line-height: 20px;
+        color: #7f8592;
+        white-space: pre-wrap;
+        margin-top: -2px;
+        font-weight: 400;
+      }
+    }
+    //label 标题下 描述部分
+    .label-desc {
+      margin-bottom: 8px;
+      color: #8d8e99;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .custom-class-form-style {
+    &__v1 {
+      &.el-form--label-top {
+        .use-radio-card-form-item {
+          .el-form-item__content {
+            .el-radio-group {
+              grid-template-columns: repeat(auto-fill, 126px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

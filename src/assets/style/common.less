@@ -1,0 +1,685 @@
+@charset "utf-8";
+
+/*****************************************公用内外边距***********************************************/
+// 外边距
+.margin(@i) when(@i >= 0) {
+  .ml@{i} {
+    margin-left: @i + 0px;
+  }
+  .mt@{i} {
+    margin-top: @i + 0px;
+  }
+  .mr@{i} {
+    margin-right: @i + 0px;
+  }
+  .mb@{i} {
+    margin-bottom: @i + 0px;
+  }
+  .m@{i} {
+    margin: @i + 0px;
+  }
+  .margin((@i - 5));
+}
+
+.margin(60);
+.mt100 {
+  margin-top: 100px;
+}
+
+// 内边距
+.padding(@i) when(@i >= 0) {
+  .pl@{i} {
+    padding-left: @i + 0px;
+  }
+  .pt@{i} {
+    padding-top: @i + 0px;
+  }
+  .pr@{i} {
+    padding-right: @i + 0px;
+  }
+  .pb@{i} {
+    padding-bottom: @i + 0px;
+  }
+  .p@{i} {
+    padding: @i + 0px;
+  }
+  .padding((@i - 5));
+}
+.padding(60);
+
+/*****************************************公用字号、行高、字色***********************************************/
+// 字体
+.font(@i) when(@i >= 12) {
+  .fs@{i} {
+    font-size: @i + 0px;
+  }
+  .font((@i - 1));
+}
+.font(40);
+.fs60 {
+  font-size: 60px;
+}
+.fs48 {
+  font-size: 48px;
+}
+
+// 行高
+.lineheight(@i) when(@i >= 12) {
+  .lh@{i} {
+    line-height: @i + 0px;
+  }
+  .lineheight((@i - 1));
+}
+.lineheight(40);
+.lh1 {
+  line-height: 1;
+}
+.lh60 {
+  line-height: 60px;
+}
+
+/*****************************************公用布局样式***********************************************/
+.com-width {
+  width: 1200px;
+  margin: 0 auto;
+}
+.h-full {
+  height: 100%;
+}
+.h-auto {
+  height: auto;
+}
+.h-unset {
+  height: unset;
+}
+.h-screen {
+  height: 100vh;
+}
+.h0 {
+  width: 0;
+}
+
+.w0 {
+  width: 0;
+}
+.w-full {
+  width: 100%;
+}
+.w-auto {
+  width: auto;
+}
+.w-unset {
+  width: unset;
+}
+.w-screen {
+  width: 100vw;
+}
+.max-w-full {
+  max-width: 100%;
+}
+.max-h-full {
+  max-height: 100%;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+}
+.flex1 {
+  flex: 1;
+}
+
+.flex-jc-between {
+  justify-content: space-between;
+}
+.flex-jc-around {
+  justify-content: space-around;
+}
+.flex-jc-start {
+  justify-content: flex-start;
+}
+.flex-jc-end {
+  justify-content: flex-end;
+}
+.flex-jc-center {
+  justify-content: center;
+}
+
+.flex-ai-start {
+  align-items: flex-start;
+}
+.flex-ai-end {
+  align-items: flex-end;
+}
+.flex-ai-center {
+  align-items: center;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-around {
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-x-start {
+  justify-content: flex-start;
+}
+.flex-x-center {
+  justify-content: center;
+}
+.flex-x-between {
+  justify-content: space-between;
+}
+.flex-x-end {
+  justify-content: flex-end;
+}
+.flex-y-start {
+  align-items: flex-start;
+}
+.flex-y-center {
+  align-items: center;
+}
+.flex-y-end {
+  align-items: flex-end;
+}
+.flex-col-center {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-start {
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.flex-dir-col {
+  flex-direction: column;
+}
+.flex-dir-col-reverse {
+  flex-direction: column-reverse;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+.flex-initial {
+  flex: 0 1 auto;
+}
+.flex-none {
+  flex: none;
+}
+
+.grow {
+  flex-grow: 1;
+}
+.grow-0 {
+  flex-grow: 0;
+}
+.shrink {
+  flex-shrink: 1;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-first {
+  order: -9999;
+}
+.order-last {
+  order: 9999;
+}
+.order-none {
+  order: 0;
+}
+
+/*****************************************grid***********************************************/
+.grid {
+  display: grid;
+}
+// Grid Template Columns
+.gridCols(@i) when(@i >= 1) {
+  .grid-cols-@{i} {
+    grid-template-columns: repeat(@i, minmax(0, 1fr));
+  }
+  .gridCols((@i - 1));
+}
+.gridCols(12);
+.grid-cols-none {
+  grid-template-columns: none;
+}
+
+// Grid Template Rows
+.gridRows(@i) when(@i >= 1) {
+  .grid-rows-@{i} {
+    grid-template-rows: repeat(@i, minmax(0, 1fr));
+  }
+  .gridRows((@i - 1));
+}
+.gridRows(6);
+.grid-rows-none {
+  grid-template-rows: none;
+}
+
+// Grid Column Start / End
+.col-auto {
+  grid-column: auto;
+}
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.colSpan(@i) when(@i >= 1) {
+  .col-span-@{i} {
+    grid-column: span @i / span @i;
+  }
+  .colSpan((@i - 1));
+}
+.colSpan(12);
+
+.colStart(@i) when(@i >= 1) {
+  .col-start-@{i} {
+    grid-column-start: @i;
+  }
+  .colStart((@i - 1));
+}
+.colStart(12);
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+.colEnd(@i) when(@i >= 1) {
+  .col-end-@{i} {
+    grid-column-start: @i;
+  }
+  .colEnd((@i - 1));
+}
+.colEnd(12);
+.col-end-auto {
+  grid-column-end: auto;
+}
+
+// Grid Row Start / End
+.rowSpan(@i) when(@i >= 1) {
+  .row-span-@{i} {
+    grid-row: span @i / span @i;
+  }
+  .rowSpan((@i - 1));
+}
+.rowSpan(6);
+.row-span-full {
+  grid-row: 1 / -1;
+}
+
+.rowStart(@i) when(@i >= 1) {
+  .row-start-@{i} {
+    grid-row-start: @i;
+  }
+  .rowStart((@i - 1));
+}
+.rowStart(12);
+.row-start-auto {
+  grid-row-start: auto;
+}
+
+.rowEnd(@i) when(@i >= 1) {
+  .row-end-@{i} {
+    grid-row-start: @i;
+  }
+  .rowEnd((@i - 1));
+}
+.rowEnd(12);
+.row-end-auto {
+  grid-row-end: auto;
+}
+
+// Grid Auto Flow
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+.grid-flow-dense {
+  grid-auto-flow: dense;
+}
+.grid-flow-row-dense {
+  grid-auto-flow: row dense;
+}
+.grid-flow-col-dense {
+  grid-auto-flow: column dense;
+}
+
+// Grid Auto Columns
+.auto-cols-auto {
+  grid-auto-columns: auto;
+}
+.auto-cols-min {
+  grid-auto-columns: min-content;
+}
+.auto-cols-max {
+  grid-auto-columns: max-content;
+}
+.auto-cols-fr {
+  grid-auto-columns: minmax(0, 1fr);
+}
+
+// Grid Auto Rows
+.auto-rows-auto {
+  grid-auto-rows: auto;
+}
+.auto-rows-min {
+  grid-auto-rows: min-content;
+}
+.auto-rows-max {
+  grid-auto-rows: max-content;
+}
+.auto-rows-fr {
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+// Gap
+.gapFn(@i) when(@i >= 0) {
+  .gap-@{i} {
+    gap: @i + 0px;
+  }
+  .gap-x-@{i} {
+    column-gap: @i + 0px;
+  }
+  .gap-y-@{i} {
+    row-gap: @i + 0px;
+  }
+  .gapFn((@i - 1));
+}
+.gapFn(40);
+
+/*****************************************Flexbox & Grid***********************************************/
+// Justify Content
+.justify-normal {
+  justify-content: normal;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.justify-stretch {
+  justify-content: stretch;
+}
+
+// Justify Items
+.justify-items-start {
+  justify-items: start;
+}
+.justify-items-end {
+  justify-items: end;
+}
+.justify-items-center {
+  justify-items: center;
+}
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+// Justify Self
+.justify-self-auto {
+  justify-self: auto;
+}
+.justify-self-start {
+  justify-self: start;
+}
+.justify-self-end {
+  justify-self: end;
+}
+.justify-self-center {
+  justify-self: center;
+}
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+// Align Content
+.content-normal {
+  align-content: normal;
+}
+.content-center {
+  align-content: center;
+}
+.content-start {
+  align-content: flex-start;
+}
+.content-end {
+  align-content: flex-end;
+}
+.content-between {
+  align-content: space-between;
+}
+.content-around {
+  align-content: space-around;
+}
+.content-evenly {
+  align-content: space-evenly;
+}
+.content-baseline {
+  align-content: baseline;
+}
+.content-stretch {
+  align-content: stretch;
+}
+
+// Align Items
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-center {
+  align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
+}
+.items-stretch {
+  align-items: stretch;
+}
+
+// Align Self
+.self-auto {
+  align-self: auto;
+}
+.self-start {
+  align-self: flex-start;
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-center {
+  align-self: center;
+}
+.self-stretch {
+  align-self: stretch;
+}
+.self-baseline {
+  align-self: baseline;
+}
+​
+// Place Content
+.place-content-center {
+  place-content: center;
+}
+.place-content-start {
+  place-content: start;
+}
+.place-content-end {
+  place-content: end;
+}
+.place-content-between {
+  place-content: space-between;
+}
+.place-content-around {
+  place-content: space-around;
+}
+.place-content-evenly {
+  place-content: space-evenly;
+}
+.place-content-baseline {
+  place-content: baseline;
+}
+.place-content-stretch {
+  place-content: stretch;
+}
+
+// Place Items
+.place-items-start {
+  place-items: start;
+}
+.place-items-end {
+  place-items: end;
+}
+.place-items-center {
+  place-items: center;
+}
+.place-items-baseline {
+  place-items: baseline;
+}
+.place-items-stretch {
+  place-items: stretch;
+}
+
+// Place Self
+.place-self-auto {
+  place-self: auto;
+}
+.place-self-start {
+  place-self: start;
+}
+.place-self-end {
+  place-self: end;
+}
+.place-self-center {
+  place-self: center;
+}
+.place-self-stretch {
+  place-self: stretch;
+}
+
+/*****************************************公用动画***********************************************/
+// 淡入动画
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// 淡出动画
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*****************************************其它公用样式***********************************************/
+.none,
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}
+.inlineblock {
+  display: inline-block;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}
+
+// 强制换行
+.wrap {
+  // word-wrap: break-word; // 只对英文起作用，以单词作为换行依据
+  word-break: break-all; // 只对英文起作用,以字母作为换行依据
+  white-space: pre-wrap; // 只对中文起作用，强制换行
+}
+
+.no-wrap {
+  white-space: nowrap; //防止同行内容换行被解析
+}
+.whitespace-break-spaces {
+  white-space: break-spaces;
+}
+
+//通用滚动条样式
+.scrollbar-style {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  /* 定义滚动条轨道的样式 */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  /* 定义滚动条的样式 */
+  &::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 6px;
+  }
+  /* 当鼠标悬停在滚动条上时，改变滚动条的颜色 */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

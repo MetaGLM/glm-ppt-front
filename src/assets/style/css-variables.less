@@ -1,0 +1,52 @@
+// 采用css 变量，区别于less、scss
+:root {
+  --topHeaderHeight: 64px; //用于官网导航
+  --topDocHeaderHeight: 66px; // 用于文档导航
+  --topHeaderBannerHeight: 0px; //头部banner高度
+  --tableBorderColor: rgba(224, 224, 224, 0.6); // 通用表格边框颜色
+  --tableBgColor: #f7f8fa; // 通用表格背景颜色
+  // --pageBgColor: linear-gradient(180deg, #f0f2f6 0%, #f7f8fa 99.5%); // 通用页面背景颜色
+  --pageBgColor: #f0f2f6; // 通用页面背景颜色
+  --primaryColor: #134cff; // 全局主题色
+  --primaryHoverColor: #1554ff; // 全局hover主题色
+  --primaryActiveColor: #2359b6; // 全局激活主题色
+  --primaryDisabledColor: #cedcf5; // 全局禁用主题色
+  --dangerColor: #f1343a; // danger按钮色
+  --dangerHoverColor: #fa8286; // danger按钮hover色
+  --dangerActiveColor: #d81a20; // danger按钮激活色
+  --dangerDisabledColor: #fcd4d7; // danger按钮禁用色
+  --mainTextColor: #131212; // 正文颜色
+  --infoColor: var(--primaryColor); // 信息颜色
+  --successColor: #06bf7f; // 成功颜色
+  --errorColor: #f01d24; // 失败颜色
+  --warningColor: #fac123; // 警告颜色
+  --warningColor-1: #ff8e42; // 警告颜色
+  --cancelColor: #5e5e66; // 取消颜色
+  --boxBorderColor: rgba(224, 224, 224, 0.2); // 通用边框颜色
+  --boxBorderColor-1: rgba(224, 224, 224, 0.6); // 通用边框颜色
+  --boxBorderColor-2: rgba(224, 224, 224, 0.4); // 通用边框颜色
+  --colorTextPlaceholder: #8d8e99; // 通用placeholder颜色
+  --colorTextDisabled: #8d8e99; // 通用placeholder颜色
+  --fontSizeTextPlaceholder: 14px; // 通用placeholder字体大小
+  --fontFamily: 'PingFang SC', 'PingFang HK', 'Helvetica Neue', Helvetica, 'Microsoft Yahei',
+    '微软雅⿊', Arial, sans-serif;
+  /****************************** radiogroup ***************************/
+  --radioBgColor: #f7f8fa; // 通用radiogroup背景颜色
+  --radioBorderColor: rgba(224, 224, 224, 0.6); // 通用radiogroup边框颜色
+  --leftSideBarWidth: 220px; // 页面侧边栏宽度
+  --float-module-zIndex: 1080; //右下角浮层z-index
+  --tooltip-dark-bg: rgba(26, 32, 41, 0.98);
+  --tooltip-light-bg: #ffffff;
+}
+
+@media screen and (max-width: 1023px) {
+  :root {
+    --topHeaderHeight: 48px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --leftSideBarWidth: 0px;
+  }
+}

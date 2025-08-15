@@ -1,0 +1,37 @@
+// label 需使用 插槽形式 ，如下：
+// <el-tab-pane name="detail">
+//     <div slot="label" class="tab-label">zxxxxx</div>
+// </el-tab-pane>
+.custom-tabs-style-class {
+  &.el-tabs {
+    .el-tabs__header {
+      margin-bottom: 32px;
+      .el-tabs__nav-wrap {
+        &:after {
+          height: 1px;
+          background-color: rgba(224, 224, 224, 0.6);
+        }
+      }
+      .el-tabs__item {
+        .tab-label {
+          padding: 13px 16px;
+        }
+        padding: 0;
+        height: auto;
+        color: #5e5e66;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        &.is-active {
+          color: var(--mainTextColor);
+          font-weight: 600;
+        }
+      }
+      .el-tabs__active-bar {
+        height: 3px;
+      }
+    }
+  }
+}
